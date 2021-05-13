@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Cadastro Convidados</title>
+<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet" />
+<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
+	rel="stylesheet" />
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h1 class="display-4">Convidado</h1>
+		</div>
+		<div class="card">
+			<form class="card-body" method="POST" th:object="${convidado}"
+				th:action="@{/convidados}">
+				<div class="row">				
+					<div>					
+						<input type="hidden" class="form-control mt-3" placeholder="Nome do convidado" th:field="*{id}">
+					</div>
+					
+					<div class="form-group mb-3 col-sm">
+						<label for="nome">Nome</label> 
+						<input type="text" class="form-control mt-3" placeholder="Nome do convidado" th:field="*{nome}">
+					</div>
+					<div class="form-group mb-3 col-sm">
+						<label for="email">Email</label> 
+						<input type="email"	class="form-control mt-3" placeholder="E-mail do convidado"	th:field="*{email}">
+					</div>
+					<div class="form-group mb-3 col-sm">
+						<label for="acompanhate">Acompanhante</label> 
+						<input type="text" class="form-control mt-3" placeholder="quantidade do acompanhante" th:field="*{acompanhante}">
+					</div>
+				</div>
+				<button type="submit" class="btn btn-secondary">Atualizar</button>
+			</form>
+		</div>		
+	</div>	
+	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

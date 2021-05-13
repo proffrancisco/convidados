@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Cadastro Convidados</title>
+</head>
+
+<body>
+	<h1>Tela de Cadastro Convidados</h1>
+	<form action="/salvar" method="post">
+		<label><b>Nome Completo</b></label> 
+		<input type="text" placeholder="Enter nome" name="nome" required> 
+		
+		<label><b>E-mail</b></label> 
+		<input type="email"	placeholder="Enter email" name="email" required> 
+		
+		<label><b>Acompanhante</b></label> 
+		<input type="text"	placeholder="Enter acompanhante" name="acompanhante" required>		
+		
+		<div class="clearfix">
+			<button type="button" class="cancelbtn">Cancel</button>
+			<button type="submit" class="signupbtn">Cadastrar</button>
+		</div>
+	</form>
+</body>
+</html>
