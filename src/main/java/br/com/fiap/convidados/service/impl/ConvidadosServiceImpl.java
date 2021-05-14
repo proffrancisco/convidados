@@ -15,7 +15,7 @@ import br.com.fiap.convidados.service.ConvidadosService;
 public class ConvidadosServiceImpl implements ConvidadosService{
 	
 	@Autowired
-	ConvidadosRepository repository;
+	ConvidadosRepository repository;	
 
 	@Override
 	public ConvidadosDto salvarConvidados(ConvidadosDto convidadoDto) {		
@@ -24,6 +24,7 @@ public class ConvidadosServiceImpl implements ConvidadosService{
 		ConvidadosDto convidadosDto = fromConvidadosEntityToConvidadosDto(entity);
 		return convidadosDto;
 	}
+	
 
 	@Override
 	public List<ConvidadosDto> listarConvidados() {	

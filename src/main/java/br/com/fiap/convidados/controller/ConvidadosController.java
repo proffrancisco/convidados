@@ -31,7 +31,7 @@ public class ConvidadosController {
 			return "redirect:/convidados";
 		}			
 		
-		return "redirect:/convidados";
+		return "redirect:/erro";
 	}
 
 	@GetMapping("/convidados")
