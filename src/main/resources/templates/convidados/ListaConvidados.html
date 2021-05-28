@@ -34,6 +34,18 @@
 						<label for="acompanhate">Acompanhante</label> 
 						<input type="text" class="form-control mt-3" placeholder="quantidade do acompanhante"  th:field="*{acompanhante}">
 					</div>
+									
+					<div class="form-group mb-3 col-sm">	
+					<div class="mb-3">
+					<label for="acompanhate">Eventos</label>
+					</div>	
+					 			
+						<select class="form-select mt-03" th:field="*{evento.id}">			   
+						  <option th:each="var: ${eventos}" 
+						  	th:value= "${var.id}"
+				     	 	th:text= "${var.descricao}"></option>			  
+						</select>	
+					</div>
 				</div>
 				<button type="submit" class="btn btn-secondary">Adicionar</button>
 			</form>

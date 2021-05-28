@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.fiap.convidados.dto.ConvidadosDto;
+import br.com.fiap.convidados.dto.EventoDto;
 import br.com.fiap.convidados.entity.ConvidadosEntity;
 import br.com.fiap.convidados.service.ConvidadosService;
+import br.com.fiap.convidados.service.EventoService;
 
 @Controller
 public class ConvidadosController {
@@ -22,6 +24,8 @@ public class ConvidadosController {
 	@Autowired
 	private ConvidadosService service; 
 	
+	@Autowired
+	private EventoService eventoService; 
 
 	@PostMapping("/convidados")
 	public String salvarConvidados(@Valid ConvidadosDto convidadoDto, BindingResult result) {
@@ -40,6 +44,10 @@ public class ConvidadosController {
 		ModelAndView view = new ModelAndView("convidados/ListaConvidados");
 
 		List<ConvidadosDto> convidados = service.listarConvidados();
+		
+		List<EventoDto> eventos = eventoService.listaEvento();
+		
+		view.addObject("eventos", eventos);
 		
 		view.addObject("convidado", new ConvidadosEntity());
 

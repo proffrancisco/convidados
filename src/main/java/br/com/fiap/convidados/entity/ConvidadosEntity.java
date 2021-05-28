@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +21,10 @@ public class ConvidadosEntity {
 	private String email;
 	
 	private String acompanhante;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_evento", nullable = false)
+	private EventoEntity evento;
 
 	public Long getId() {
 		return id;
@@ -50,6 +56,14 @@ public class ConvidadosEntity {
 
 	public void setAcompanhante(String acompanhante) {
 		this.acompanhante = acompanhante;
+	}
+
+	public EventoEntity getEvento() {
+		return evento;
+	}
+
+	public void setEvento(EventoEntity evento) {
+		this.evento = evento;
 	}
 	
 }
